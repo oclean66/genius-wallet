@@ -26,7 +26,7 @@
         </section>     
     </div>
     <script src="{{asset('assets/admin/js/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/admin/js/proper.min.js')}}"></script>
+    <script src="{{asset('assets/admin/js/popper.min.js')}}"></script>
     <script src="{{asset('assets/admin/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/admin/js/scripts.js')}}"></script>
     @include('notify.alert')
