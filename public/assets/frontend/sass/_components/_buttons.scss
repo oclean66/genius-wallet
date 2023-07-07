@@ -1,0 +1,46 @@
+.cmn--btn {
+	font-family: $heading;
+	position: relative;
+	color: $white;
+	border-radius: 7px;
+	width: auto;
+	font-weight: 500;
+	text-transform: capitalize;
+	outline: none;
+	border: none;
+	padding: 10px 25px;
+	overflow: hidden;
+	background: $base;
+	text-decoration: none;
+	border: 2px solid rgba($base, 0.2);
+	text-align: center;
+	&:hover,
+	&.btn-outline {
+		color: $base;
+		background: transparent;
+		border-color: $base;
+	}
+	&.btn-outline {
+		&:hover {
+			background: $base;
+			color: $white;
+		}
+	}
+}
+button.cmn--btn {
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 50px;
+	&:hover {
+		color: $white;
+		background: $base;
+	}
+}
+.btn.cmn--btn {
+	outline: none;
+	box-shadow: none;
+	&:hover {
+		color: $title;
+		border-color: rgba($title, 0.1);
+	}
+}

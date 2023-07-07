@@ -1,0 +1,106 @@
+/*Footer*/
+.footer-top {
+	padding: 80px 0;
+}
+.bottom-menu-wrapper {
+	margin: -5px;
+	.footer-logo {
+		max-width: 170px;
+		margin: 5px;
+		a {
+			display: block;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	.copyright {
+		margin: 5px;
+	}
+	align-items: center;
+	@include breakpoint(max-lg) {
+		.copyright {
+			width: 100%;
+			order: 1;
+			text-align: center;
+		}
+	}
+	@include breakpoint(max-sm) {
+		text-align: center;
+		> * {
+			width: 100%;
+			justify-content: center;
+		}
+		.footer-logo {
+			margin-bottom: 10px;
+		}
+		.bottom-menu {
+			margin-bottom: 5px;
+		}
+	}
+}
+.bottom-menu {
+	display: flex;
+	flex-wrap: wrap;
+	li {
+		padding: 0 5px;
+		a {
+			padding: 0 5px;
+			color: $title;
+			font-family: $heading;
+			@include breakpoint(max-md) {
+				font-size: 14px;
+			}
+		}
+	}
+}
+.footer-wrapper {
+	margin: 0 -12px -35px;
+	@extend %flex;
+	justify-content: space-between;
+}
+.footer-widget {
+	margin-bottom: 35px;
+	padding: 0 12px;
+	width: calc(100% / 4);
+	@include breakpoint(max-lg) {
+		width: calc(100% / 2);
+	}
+	@include breakpoint(max-sm) {
+		width: 220px;
+		flex-grow: 1;
+	}
+	.footer-title {
+		text-transform: capitalize;
+		margin-bottom: 15px;
+		font-weight: 600;
+	}
+	ul {
+		li {
+			a {
+				color: $title;
+				padding: 5px 0;
+				padding-left: 20px;
+				&:hover {
+					color: $base;
+					padding-left: 23px;
+					&::before {
+						@include transform(translateX(5px));
+					}
+				}
+				&::before {
+					content: "";
+					width: 7px;
+					height: 7px;
+					@include border-radius(50%);
+					background: $base;
+					@include transition($transition);
+					position: absolute;
+					left: 0;
+					top: 15px;
+				}
+			}
+			position: relative;
+		}
+	}
+}

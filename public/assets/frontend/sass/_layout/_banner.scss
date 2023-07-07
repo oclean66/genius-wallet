@@ -1,0 +1,262 @@
+/*Banner Section Starts Here*/
+.banner__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	&-content {
+		align-self: center;
+		width: 50%;
+		padding: 40px 0;
+		position: relative;
+		z-index: 1;
+		.subtitle {
+			margin-bottom: 5px;
+		}
+		.title {
+			margin-bottom: 25px;
+		}
+		p {
+			max-width: 600px;
+		}
+		@include breakpoint(sm) {
+			p {
+				font-size: 18px;
+				line-height: 1.6;
+			}
+		}
+	}
+	&-thumb {
+		position: relative;
+		z-index: 1;
+	}
+	@include breakpoint(lg) {
+		min-height: 820px;
+		&-thumb {
+			inset: 0 18px 0 50%;
+			position: absolute;
+		}
+		@include breakpoint(max-xl) {
+			min-height: 700px;
+			&-thumb {
+				inset: 0 0 0 50%;
+			}
+		}
+		&-thumb {
+			background: $base;
+			mask: url(./img/banner-shape.png) no-repeat left bottom / cover;
+			-webkit-mask: url(./img/banner-shape.png) no-repeat left bottom / cover;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+	@include breakpoint(max-lg) {
+		&-content {
+			width: 100%;
+			padding: 60px 0 30px;
+		}
+		&-thumb {
+			mask: url(./img/banner-shape.png) no-repeat center center / contain;
+			-webkit-mask: url(./img/banner-shape.png) no-repeat center center /
+				contain;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+.banner-section {
+	position: relative;
+	overflow: hidden;
+}
+.banner-elem {
+	position: absolute;
+	display: block;
+	overflow: hidden;
+	&.elem1 {
+		width: 20px;
+		height: 20px;
+		background: url(./img/banner-elements/1.png) no-repeat center center /
+			contain;
+		top: 30px;
+		left: calc(50% - 75px);
+		animation: rotate 4s alternate infinite;
+	}
+	&.elem2 {
+		width: 30px;
+		height: 30px;
+		background: url(./img/banner-elements/2.png) no-repeat center center /
+			contain;
+		top: 100px;
+		left: calc(50% - 570px);
+		animation: rotate 4s alternate-reverse infinite;
+	}
+	&.elem3 {
+		width: 30px;
+		height: 30px;
+		background: url(./img/banner-elements/3.png) no-repeat center center /
+			contain;
+		right: 100px;
+		top: 30px;
+		animation: rotate 4s alternate infinite;
+	}
+	&.elem4 {
+		width: 75px;
+		height: 40px;
+		background: url(./img/banner-elements/4.png) no-repeat center center /
+			contain;
+		top: 230px;
+		left: 50%;
+		animation: move1 4s alternate infinite;
+	}
+	&.elem5 {
+		width: 45px;
+		height: 45px;
+		background: url(./img/banner-elements/5.png) no-repeat center center /
+			contain;
+		top: 240px;
+		right: calc(50% + 800px);
+		animation: move2 4s alternate infinite;
+	}
+	&.elem6 {
+		width: 40px;
+		height: 40px;
+		background: url(./img/banner-elements/6.png) no-repeat center center /
+			contain;
+		bottom: 130px;
+		right: 50%;
+		animation: jump 3s alternate infinite;
+	}
+	&.elem7 {
+		width: 40px;
+		height: 40px;
+		background: url(./img/banner-elements/7.png) no-repeat center center /
+			contain;
+		bottom: 60px;
+		right: calc(50% + 780px);
+		animation: move2 5s alternate infinite;
+	}
+	&.elem10 {
+		width: 40px;
+		height: 40px;
+		background: url(./img/banner-elements/7.png) no-repeat center center /
+			contain;
+		top: 550px;
+		left: 120px;
+		animation: move2 5s alternate infinite;
+	}
+	&.elem8 {
+		width: 55px;
+		height: 55px;
+		background: url(./img/banner-elements/8.png) no-repeat center center /
+			contain;
+		right: 30px;
+		bottom: 30px;
+		animation: move2 4s alternate infinite;
+	}
+	&.elem9 {
+		width: 100px;
+		height: 100px;
+		background: url(./img/banner-elements/9.png) no-repeat center center /
+			contain;
+		bottom: 0;
+		left: calc(50% - 330px);
+		animation: slide 5s alternate infinite;
+	}
+}
+@keyframes rotate {
+	0% {
+		@include transform(rotate(0deg));
+	}
+	100% {
+		@include transform(rotate(720deg));
+	}
+}
+@keyframes move1 {
+	0% {
+		@include transform(translate(0px, 0px));
+	}
+	50% {
+		@include transform(translate(50px, 55px));
+	}
+	100% {
+		@include transform(translate(50px, -50px));
+	}
+}
+@keyframes move2 {
+	0% {
+		@include transform(translate(0px, 0px) rotate(0deg));
+	}
+	50% {
+		@include transform(translate(50px, 55px) rotate(360deg));
+	}
+	100% {
+		@include transform(translate(50px, -50px) rotate(-360deg));
+	}
+}
+@keyframes jump {
+	0% {
+		@include transform(translateY(0px));
+	}
+	40% {
+		@include transform(translateY(50px));
+	}
+	70% {
+		@include transform(translateY(-30px));
+	}
+	100% {
+		@include transform(translateY(80px));
+	}
+}
+@keyframes slide {
+	0% {
+		@include transform(translateX(0px));
+	}
+	40% {
+		@include transform(translateX(50px));
+	}
+	70% {
+		@include transform(translateX(-30px));
+	}
+	100% {
+		@include transform(translateX(80px));
+	}
+}
+/*Hero Section*/
+.hero-section {
+	padding: 80px 0 90px;
+	border-bottom: 1px solid $border-color;
+	position: relative;
+}
+.hero-content {
+	position: relative;
+	text-align: center;
+	.hero-title {
+		margin-bottom: 10px;
+	}
+	.breadcrumb {
+		justify-content: center;
+		padding: 0;
+		margin: 0;
+		li {
+			color: $base;
+			font-weight: 600;
+			font-family: $heading;
+			a {
+				color: $title;
+				display: inline-flex;
+				align-items: center;
+				&::after {
+					content: "";
+					display: inline-block;
+					height: 2px;
+					width: 10px;
+					background: $title;
+					margin: 0 5px;
+					@include transform(translateY(2px));
+				}
+			}
+		}
+	}
+}
